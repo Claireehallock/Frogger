@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqa6xaipwolnp"]
+
+[ext_resource type="Texture2D" uid="uid://ch3r7c3l51g8x" path="res://Assets/Water.png" id="1_i1ckr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl7cg"]
+size = Vector2(448, 256)
+
+[node name="Water" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i1ckr")
+region_enabled = true
+region_rect = Rect2(0, 0, 448, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xl7cg")

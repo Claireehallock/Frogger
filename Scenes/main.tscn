@@ -1,0 +1,250 @@
+[gd_scene load_steps=32 format=3 uid="uid://dm1ofcx5k48a6"]
+
+[ext_resource type="PackedScene" uid="uid://cdljpaciil76s" path="res://Scenes/window_size.tscn" id="1_km2mj"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_u44xn"]
+[ext_resource type="PackedScene" uid="uid://bqa6xaipwolnp" path="res://Scenes/water.tscn" id="1_ytte3"]
+[ext_resource type="PackedScene" uid="uid://bbstprn72impe" path="res://Scenes/player.tscn" id="2_budd2"]
+[ext_resource type="PackedScene" uid="uid://lq1bmr15d6jp" path="res://Scenes/grass.tscn" id="2_fqpcb"]
+[ext_resource type="PackedScene" uid="uid://dy2o3rj3muj1j" path="res://Scenes/sidewalk.tscn" id="3_rlue4"]
+[ext_resource type="PackedScene" uid="uid://vd63fi1dt0g4" path="res://Scenes/car_1.tscn" id="4_1p8ij"]
+[ext_resource type="PackedScene" uid="uid://lrwpkmuqegoo" path="res://Scenes/car_2.tscn" id="5_atpru"]
+[ext_resource type="Script" path="res://Scripts/car_1.gd" id="6_7soal"]
+[ext_resource type="PackedScene" uid="uid://b7qfll238i2km" path="res://Scenes/car_3.tscn" id="6_54sna"]
+[ext_resource type="PackedScene" uid="uid://cq0q303ptwfdu" path="res://Scenes/car_4.tscn" id="7_ey4tw"]
+[ext_resource type="Script" path="res://Scripts/car_2.gd" id="8_5wrhx"]
+[ext_resource type="PackedScene" uid="uid://bskuhgg4l7qkt" path="res://Scenes/car_5.tscn" id="8_kvgju"]
+[ext_resource type="PackedScene" uid="uid://nangpgtpqf0r" path="res://Scenes/3_turtles.tscn" id="9_32xg6"]
+[ext_resource type="PackedScene" uid="uid://d2gypdystue58" path="res://Scenes/short_log.tscn" id="10_68x7x"]
+[ext_resource type="Script" path="res://Scripts/car_3.gd" id="10_hjh07"]
+[ext_resource type="PackedScene" uid="uid://cgvi64eyu2i6f" path="res://Scenes/2_turtles.tscn" id="10_xcg0p"]
+[ext_resource type="PackedScene" uid="uid://mewnualraliy" path="res://Scenes/long_log.tscn" id="11_4ir1b"]
+[ext_resource type="Script" path="res://Scripts/car_4.gd" id="12_8dw6h"]
+[ext_resource type="PackedScene" uid="uid://dhgck5kcquccu" path="res://Scenes/medium_log.tscn" id="13_s4nkx"]
+[ext_resource type="Script" path="res://Scripts/car_5.gd" id="14_1e1hy"]
+[ext_resource type="PackedScene" uid="uid://cihpe8eebas2v" path="res://Scenes/grass_collision.tscn" id="15_iw847"]
+[ext_resource type="Script" path="res://Scripts/3_turtles.gd" id="16_2xy1l"]
+[ext_resource type="Script" path="res://Scenes/grass_collision.gd" id="16_fex5m"]
+[ext_resource type="Script" path="res://Scripts/short_log.gd" id="18_antf3"]
+[ext_resource type="Script" path="res://Scripts/long_log.gd" id="20_tkqai"]
+[ext_resource type="Script" path="res://Scripts/2_turtles.gd" id="22_bq16i"]
+[ext_resource type="Script" path="res://Scripts/medium_log.gd" id="24_xwolh"]
+[ext_resource type="PackedScene" uid="uid://b1cqxki3tfj4k" path="res://Scenes/home.tscn" id="25_qq5s2"]
+[ext_resource type="Script" path="res://Scripts/home.gd" id="26_a2s10"]
+[ext_resource type="Script" path="res://Scenes/Homes.gd" id="28_sj0ra"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_u44xn")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="WindowSize" parent="Background" instance=ExtResource("1_km2mj")]
+
+[node name="Water" parent="Background" instance=ExtResource("1_ytte3")]
+position = Vector2(224, 128)
+
+[node name="Home" parent="Background" instance=ExtResource("2_fqpcb")]
+position = Vector2(224, 64)
+
+[node name="Sidewalk" parent="Background" instance=ExtResource("3_rlue4")]
+position = Vector2(224, 464)
+
+[node name="Sidewalk2" parent="Background" instance=ExtResource("3_rlue4")]
+position = Vector2(224, 272)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Cars Row 1" type="Node2D" parent="Obstacles"]
+position = Vector2(0, 432)
+
+[node name="Car1" parent="Obstacles/Cars Row 1" instance=ExtResource("4_1p8ij")]
+position = Vector2(176, 0)
+script = ExtResource("6_7soal")
+
+[node name="Car1_1" parent="Obstacles/Cars Row 1" instance=ExtResource("4_1p8ij")]
+position = Vector2(304, 0)
+script = ExtResource("6_7soal")
+
+[node name="Car1_2" parent="Obstacles/Cars Row 1" instance=ExtResource("4_1p8ij")]
+position = Vector2(432, 0)
+script = ExtResource("6_7soal")
+
+[node name="Cars Row 2" type="Node2D" parent="Obstacles"]
+position = Vector2(0, 400)
+
+[node name="Car 2" parent="Obstacles/Cars Row 2" instance=ExtResource("5_atpru")]
+position = Vector2(208, 0)
+script = ExtResource("8_5wrhx")
+
+[node name="Car 2_1" parent="Obstacles/Cars Row 2" instance=ExtResource("5_atpru")]
+position = Vector2(320, 0)
+script = ExtResource("8_5wrhx")
+
+[node name="Car 2_2" parent="Obstacles/Cars Row 2" instance=ExtResource("5_atpru")]
+position = Vector2(432, 0)
+script = ExtResource("8_5wrhx")
+
+[node name="Cars Row 3" type="Node2D" parent="Obstacles"]
+position = Vector2(0, 368)
+
+[node name="Car 3" parent="Obstacles/Cars Row 3" instance=ExtResource("6_54sna")]
+position = Vector2(208, 0)
+script = ExtResource("10_hjh07")
+
+[node name="Car 3_1" parent="Obstacles/Cars Row 3" instance=ExtResource("6_54sna")]
+position = Vector2(320, 0)
+script = ExtResource("10_hjh07")
+
+[node name="Car 3_2" parent="Obstacles/Cars Row 3" instance=ExtResource("6_54sna")]
+position = Vector2(432, 0)
+script = ExtResource("10_hjh07")
+
+[node name="Cars Row 4" type="Node2D" parent="Obstacles"]
+position = Vector2(0, 336)
+
+[node name="Car 4" parent="Obstacles/Cars Row 4" instance=ExtResource("7_ey4tw")]
+position = Vector2(432, 0)
+script = ExtResource("12_8dw6h")
+
+[node name="Cars Row 5" type="Node2D" parent="Obstacles"]
+position = Vector2(0, 304)
+
+[node name="Car 5" parent="Obstacles/Cars Row 5" instance=ExtResource("8_kvgju")]
+position = Vector2(256, 0)
+script = ExtResource("14_1e1hy")
+
+[node name="Car 5_1" parent="Obstacles/Cars Row 5" instance=ExtResource("8_kvgju")]
+position = Vector2(448, 0)
+script = ExtResource("14_1e1hy")
+
+[node name="Grass Row" type="Node2D" parent="Obstacles"]
+
+[node name="Grass Collision" parent="Obstacles/Grass Row" instance=ExtResource("15_iw847")]
+position = Vector2(-16, 76)
+script = ExtResource("16_fex5m")
+
+[node name="Grass Collision2" parent="Obstacles/Grass Row" instance=ExtResource("15_iw847")]
+position = Vector2(80, 76)
+script = ExtResource("16_fex5m")
+
+[node name="Grass Collision3" parent="Obstacles/Grass Row" instance=ExtResource("15_iw847")]
+position = Vector2(176, 76)
+script = ExtResource("16_fex5m")
+
+[node name="Grass Collision4" parent="Obstacles/Grass Row" instance=ExtResource("15_iw847")]
+position = Vector2(272, 76)
+script = ExtResource("16_fex5m")
+
+[node name="Grass Collision5" parent="Obstacles/Grass Row" instance=ExtResource("15_iw847")]
+position = Vector2(368, 76)
+script = ExtResource("16_fex5m")
+
+[node name="Grass Collision6" parent="Obstacles/Grass Row" instance=ExtResource("15_iw847")]
+position = Vector2(464, 76)
+script = ExtResource("16_fex5m")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Turtles Row 1" type="Node2D" parent="Platforms"]
+position = Vector2(0, 240)
+
+[node name="3 Turtles" parent="Platforms/Turtles Row 1" instance=ExtResource("9_32xg6")]
+position = Vector2(48, 0)
+script = ExtResource("16_2xy1l")
+
+[node name="3 Turtles2" parent="Platforms/Turtles Row 1" instance=ExtResource("9_32xg6")]
+position = Vector2(176, 0)
+script = ExtResource("16_2xy1l")
+
+[node name="3 Turtles3" parent="Platforms/Turtles Row 1" instance=ExtResource("9_32xg6")]
+position = Vector2(304, 0)
+script = ExtResource("16_2xy1l")
+
+[node name="3 Turtles4" parent="Platforms/Turtles Row 1" instance=ExtResource("9_32xg6")]
+position = Vector2(432, 0)
+script = ExtResource("16_2xy1l")
+
+[node name="Logs Row 1" type="Node2D" parent="Platforms"]
+position = Vector2(0, 208)
+
+[node name="Short Log" parent="Platforms/Logs Row 1" instance=ExtResource("10_68x7x")]
+position = Vector2(112, 0)
+script = ExtResource("18_antf3")
+
+[node name="Short Log2" parent="Platforms/Logs Row 1" instance=ExtResource("10_68x7x")]
+position = Vector2(272, 0)
+script = ExtResource("18_antf3")
+
+[node name="Short Log3" parent="Platforms/Logs Row 1" instance=ExtResource("10_68x7x")]
+position = Vector2(432, 0)
+script = ExtResource("18_antf3")
+
+[node name="Logs Row 2" type="Node2D" parent="Platforms"]
+position = Vector2(0, 176)
+
+[node name="Long Log" parent="Platforms/Logs Row 2" instance=ExtResource("11_4ir1b")]
+position = Vector2(128, 0)
+script = ExtResource("20_tkqai")
+
+[node name="Long Log2" parent="Platforms/Logs Row 2" instance=ExtResource("11_4ir1b")]
+position = Vector2(384, 0)
+script = ExtResource("20_tkqai")
+
+[node name="Turtles Row 2" type="Node2D" parent="Platforms"]
+position = Vector2(0, 144)
+
+[node name="2 Turtles" parent="Platforms/Turtles Row 2" instance=ExtResource("10_xcg0p")]
+position = Vector2(112, 0)
+script = ExtResource("22_bq16i")
+
+[node name="2 Turtles2" parent="Platforms/Turtles Row 2" instance=ExtResource("10_xcg0p")]
+position = Vector2(224, 0)
+script = ExtResource("22_bq16i")
+
+[node name="2 Turtles3" parent="Platforms/Turtles Row 2" instance=ExtResource("10_xcg0p")]
+position = Vector2(336, 0)
+script = ExtResource("22_bq16i")
+
+[node name="2 Turtles4" parent="Platforms/Turtles Row 2" instance=ExtResource("10_xcg0p")]
+position = Vector2(448, 0)
+script = ExtResource("22_bq16i")
+
+[node name="Logs Row 3" type="Node2D" parent="Platforms"]
+position = Vector2(0, 112)
+
+[node name="Medium Log" parent="Platforms/Logs Row 3" instance=ExtResource("13_s4nkx")]
+position = Vector2(64, 0)
+script = ExtResource("24_xwolh")
+
+[node name="Medium Log2" parent="Platforms/Logs Row 3" instance=ExtResource("13_s4nkx")]
+position = Vector2(240, 0)
+script = ExtResource("24_xwolh")
+
+[node name="Medium Log3" parent="Platforms/Logs Row 3" instance=ExtResource("13_s4nkx")]
+position = Vector2(416, 0)
+script = ExtResource("24_xwolh")
+
+[node name="Homes" type="Node2D" parent="."]
+script = ExtResource("28_sj0ra")
+
+[node name="Home" parent="Homes" instance=ExtResource("25_qq5s2")]
+position = Vector2(32, 80)
+script = ExtResource("26_a2s10")
+
+[node name="Home2" parent="Homes" instance=ExtResource("25_qq5s2")]
+position = Vector2(128, 80)
+script = ExtResource("26_a2s10")
+
+[node name="Home3" parent="Homes" instance=ExtResource("25_qq5s2")]
+position = Vector2(224, 80)
+script = ExtResource("26_a2s10")
+
+[node name="Home4" parent="Homes" instance=ExtResource("25_qq5s2")]
+position = Vector2(320, 80)
+script = ExtResource("26_a2s10")
+
+[node name="Home5" parent="Homes" instance=ExtResource("25_qq5s2")]
+position = Vector2(416, 80)
+script = ExtResource("26_a2s10")
+
+[node name="Player" parent="." instance=ExtResource("2_budd2")]
+position = Vector2(240, 464)

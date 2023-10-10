@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbstprn72impe"]
+
+[ext_resource type="Texture2D" uid="uid://jtbshbndo0d3" path="res://Assets/FroggerIdle.png" id="1_k064j"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_nmq0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rm1f"]
+size = Vector2(12, 9)
+
+[node name="Player" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_nmq0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_k064j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_4rm1f")
